@@ -3,7 +3,7 @@
 
 
 $(document).ready(function(){
-	DEBUG_MODE = true;
+	DEBUG_MODE = false;
 
 var numSecret = Math.floor((Math.random()*100)+1)
 var guess = null;
@@ -42,9 +42,9 @@ function numGuess(){
 		else{
 			guessCount = guessCountIncrement(guessCount);
 			if (Math.abs(numSecret-guess)>Math.abs(numSecret-guessLog[guessLog.length - 1])){
-				$("header h1").replaceWith('<h1>HOT or COLD | Getting Colder</h1>');
+				$("#hotterColder").html('Getting Colder');
 			} else {
-				$("header h1").replaceWith('<h1>HOT or COLD | Getting Hotter</h1>');
+				$("#hotterColder").html('Getting Hotter');
 			}
 			guessLog.push(guess);
 
